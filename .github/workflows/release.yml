@@ -33,7 +33,11 @@ jobs:
       - name: Create release with the zip
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "${{ github.ref_name }}" \
-          --title "${{ github.ref_name }}" \
-          --generate-notes \
-          /tmp/build/365nails-sync.zip
+        # 字面块（|）保换行：YAML 折叠标量会把行尾的反斜杠变成字面参数
+        # （v0.1.0 第一次发布就是这么挂的 —— zip 已打出，create 报
+        # "no matches found for ` --title`"）。
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            --title "${{ github.ref_name }}" \
+            --generate-notes \
+            /tmp/build/365nails-sync.zip
