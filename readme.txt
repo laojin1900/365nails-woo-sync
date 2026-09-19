@@ -4,7 +4,7 @@ Tags: woocommerce, dropshipping, order sync, fulfillment, tracking
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 0.2.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ It does not receive or verify webhooks (WooCommerce delivers straight to the por
 Reinstall the newer zip over the old one. Deactivation and replacement never delete your webhooks, order meta, or data.
 
 == Changelog ==
+
+= 0.2.1 =
+* W4: plugins-page notice when a newer release exists on GitHub (the other half of the zip-reinstall maintenance promise).
 
 = 0.2.0 =
 * W3 merchant visibility: "365nails Dropshipping" panel on the order screen (HPOS + classic storage) and the tracking block in the customer's shipping email.

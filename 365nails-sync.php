@@ -3,7 +3,7 @@
  * Plugin Name:       365nails Sync
  * Plugin URI:        https://365nails.com
  * Description:       Connects your WooCommerce store to 365nails dropshipping: orders flow to your 365nails portal, and tracking numbers flow back — visible in your order admin and in your customers' emails.
- * Version:           0.2.0
+ * Version:           0.2.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            365nails
@@ -43,12 +43,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'NAI365_SYNC_VERSION', '0.2.0' );
+define( 'NAI365_SYNC_VERSION', '0.2.1' );
 define( 'NAI365_SYNC_FILE', __FILE__ );
 define( 'NAI365_SYNC_PATH', plugin_dir_path( __FILE__ ) );
 
 require_once NAI365_SYNC_PATH . 'includes/class-365nails-plugin.php';
 require_once NAI365_SYNC_PATH . 'includes/class-365nails-tracking-display.php';
+require_once NAI365_SYNC_PATH . 'includes/class-365nails-update-notice.php';
 
 /**
  * HPOS (custom order tables) compatibility declaration.

@@ -30,6 +30,7 @@ final class Nai365_Sync {
 		// Feature registry — one line per slice, so this function reads as the
 		// table of contents of what the plugin does.
 		Nai365_Tracking_Display::init(); // W3: order-admin panel + shipping email.
+		Nai365_Update_Notice::init();     // W4: "new zip available" notice on plugins.php.
 	}
 
 	/**
