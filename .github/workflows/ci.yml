@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ['7.4', '8.2', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      # The whole CI for now: a syntax check across every PHP file, on the
+      # oldest and newest PHP the plugin declares support for. Nothing here is
+      # a substitute for the real-store acceptance run (W5) — it exists so a
+      # syntax slip cannot become a broken zip on a merchant's site.
+      - name: Syntax check
+        run: find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l
